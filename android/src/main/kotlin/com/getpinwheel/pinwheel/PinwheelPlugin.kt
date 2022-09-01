@@ -111,6 +111,10 @@ class PluginListener(messenger: BinaryMessenger) : PinwheelEventListener {
         val obj = PinwheelEventChannelArgument("login", gson.toJson(payload))
         argument = gson.toJson(obj)
       }
+      PinwheelEventType.LOGIN_ATTEMPT -> {
+        val obj = PinwheelEventChannelArgument("login_attempt", gson.toJson(payload))
+        argument = gson.toJson(obj)
+      }
 
       PinwheelEventType.INPUT_AMOUNT -> {
         val obj = PinwheelEventChannelArgument("input_amount", gson.toJson(payload))
